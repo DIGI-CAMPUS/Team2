@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문-5</title>
+</head>
+
+<body>
+  <!-- <script>
+    //사용자로부터 입력받는 부분
+    var value = window.prompt("행운의 번호를 고르세요.");
+
+    //값 비교 
+    if (value == "1") {
+      document.write("당첨! 머그컵");
+    }
+    else if (value == "2") {
+      document.write("당첨! 비스포크 냉장고");
+    }
+    else if (value == "3") {
+      document.write("당첨! 3D 펜");
+    }
+    else {
+      document.write("꽝!!!!!");
+    }
+  </script> -->
+  <script>
+    let answer = Math.floor(Math.random() * 100);
+    let min = 0;
+    let max = 99;
+    let count = 1;
+    let input = -1;
+    window.alert("숫자 맞추기 게임(숫자가 정해졌어요)")
+    window.alert("범위는 0~99")
+    while (answer != input) {
+      input = window.prompt(count + "번째 시도 범위는 " + min + "에서 " + max + "사이");
+      if (input > max || input < min || input == null || input == "") {
+        window.alert("입력 범위가 틀렸습니다.");
+        count++;
+        continue;
+      }
+      else if (input != answer) {
+        if (answer > input) {
+          window.alert("떙! " + input + "보다 큰수 입니다.");
+          count++;
+          min = parseInt(input) + 1;
+          continue;
+        }
+        else {
+          window.alert("떙! " + input + "보다 작은수 입니다.");
+          count++;
+          max = input - 1;
+          continue;
+        }
+      }
+      else {
+        window.alert(input + "정답입니다!\n" + "정답은 " + count + "번째 맞추셨습니다.");
+        break;
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

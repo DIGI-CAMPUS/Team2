@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>난수를 발생시켜 맞추는 게임</title>
+    </head>
+    <body>
+        <script>
+            var low = 0; //최소값
+            var high = 0; //최고값
+            var card = 0; //정답
+
+            //정답 맞출때까지 무한루프
+
+            var count = 0; //시도횟수
+            low = 1;
+            high = 100;
+            card = Math.floor(Math.random() * 100) + 1; //math.floor 정수변환
+            alert("랜덤한 숫자를 결정했습니다. 맞춰보세요.");
+            alert(low + "~" + high); //정답 범위 출력
+
+            while (true) {
+                var n = 0;
+                count++;
+                alert(count + "번째 시도 입니다.");
+                var n = prompt("숫자를 입력하세요");
+
+                if (n == card) {
+                    alert("*******" + count + "번만에 정답입니다*******");
+                    break;
+                } else if (n > card) alert("땡! 더 낮아요");
+                else if (n < card) alert("땡! 더 높아요");
+                else alert("숫자만 입력해주세요.");
+            }
+        </script>
+        <!-- <script>
+            var low = 0; //최소값
+            var high = 0; //최고값
+            var card = 0; //정답
+
+            //정답 맞출때까지 무한루프
+
+            var count = 0; //시도횟수
+            low = 1;
+            high = 100;
+            card = Math.floor(Math.random() * 100) + 1; //math.floor 정수변환
+            alert("랜덤한 숫자를 결정했습니다. 맞춰보세요.");
+            alert(low + "~" + high); //정답 범위 출력
+
+            while (true) {
+                var n = 0;
+                count++;
+                alert(count + "번째 시도 입니다.");
+                n = prompt("숫자를 입력하세요");
+                n = parseInt(n);
+                if(n > high || n < low){
+                    alert("값의 범위를 벗어났어요")
+                }
+                if (n == card) {
+                    alert("*******" + count + "번만에 정답입니다*******");
+                    break;
+                } else if (n > card) alert("땡! 더 낮아요");
+                else if (n < card) alert("땡! 더 높아요");
+                else alert("숫자만 입력해주세요.");
+            }
+        </script> -->
+    </body>
+</html>

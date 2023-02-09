@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var low = 0; //범위의 최소값
+    var high = 99; //범위의 최고값
+    var card = Math.floor(Math.random()*100); //랜덤값
+    var count = 0; //사용자의 시도 횟수
+      
+      alert("수를 결정하였습니다. 맞춰 보세요.");
+
+      while(true){
+        // alert ( "범위는" + low + " ~ " + high + "입니다." );
+        // alert ( "시도 횟수는 " + count + " 번째 입니다.");
+        var n = prompt ("숫자를 입력하세요");
+
+        if ( n< low || n > high || n=="" || n==null ) {
+          alert ( "입력한 범위가 틀렸습니다");
+          alert ( "범위는" + low + " ~ " + high + "입니다." );
+          count++;
+          alert ( "시도 횟수는 " + count + " 번째 입니다.");
+          continue;
+        }  
+
+        if ( n < card ) {
+          alert ( "정답은 더 높은 수 입니다." );  
+          low = n ;
+          alert ( "범위는" + low + " ~ " + high + "입니다." );
+          count++;
+          alert ( "시도 횟수는 " + count + " 번째 입니다.");
+        // var n = prompt ("숫자를 입력하세요");
+          continue;
+        }
+        else if ( card < n ) {
+          alert ( "정답은 더 낮은 수 입니다." );  
+          high = n ;
+          alert ( "범위는" + low + " ~ " + high + "입니다." );
+          count++;
+          alert ( "시도 횟수는 " + count + " 번째 입니다.");
+        // var n = prompt ("숫자를 입력하세요");
+          continue;
+          }
+        else {alert ( "정답입니다.박수~~" );
+          break;
+        }
+      }
+  
+  </script>
+</body>
+</html>

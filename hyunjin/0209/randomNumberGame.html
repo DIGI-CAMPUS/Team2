@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>난수 Game</title>
+  </head>
+  <body>
+    <script>
+      var low = 0;
+      var high = 99;
+      var card; //정답
+      card = Math.floor(Math.random() * 100);
+      var count = 0; //사용자의 시도 횟수
+      alert("수를 결정했습니다. 맞춰 보세요!");
+      // 정해진 난수를 맞출때까지 실행 (내부 루프)
+      while (true) {
+        var n = 0;
+        /* alert(low + "~" + high); //값의 범위를 출력 */
+        count++;
+        alert("시도횟수 :" + count + "번째");
+        var n = prompt(low + "~" + high, "숫자입력");
+        if (n < low || n > high || n == "" || n == null) {
+          alert("엉뚱한 답을 넣으셨구먼..");
+          continue;
+        } //가장 많은 오답 먼저 날리고 시작
+
+        /*  */
+        if (card == n) {
+          alert(
+            "정답! " + card + "입니다. " + count + "번만에 정답을 맞췄습니다."
+          );
+          break;
+        }
+        // 오답(작은 수 입력)
+        else if (n < card) {
+          low = parseInt(n) + 1; //문자를 숫자로 바꿔줌
+          alert("땡! " + low + "~" + high + "사이 숫자로 다시 도전하세요.");
+        }
+        // 오답(큰 수 입력)
+        else if (n > card) {
+          high = n - 1;
+          alert("땡! " + low + "~" + high + "사이 숫자로 다시 도전하세요.");
+        }
+
+        // var conf = confirm("게임을 계속 하시겠습니까?"); 어찌 활용할까.. confirm 팝업에서 확인=true, 취소는=false임
+      }
+    </script>
+  </body>
+</html>

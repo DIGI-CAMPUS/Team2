@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <div class=loginZone>
+            <div class="logo">
+                <img src="https://fontmeme.com/images/instagram-new-logo.png" alt="Instagram_logo">
+            </div>
+            <div class="loginFormZone">
+                <form class="loginForm" name="loginForm" onsubmit="return false;">
+                    <input type="text" name="id" id="id" placeholder="전화번호, 사용자 이름 또는 이메일" required>
+                    <input type="password" name="pw" id="pw" placeholder="비밀번호" required>
+                    <button id="loginButton" value="로그인" onclick="login_check();">로그인</button>
+                </form>
+                <div class="orLine">
+                    <hr class="bar">
+                    <span class="orTxt">또는</span>
+                    <hr class="bar">
+                </div>
+                <div class="facebookLogin">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/800px-Facebook_logo_%28square%29.png"
+                        alt="facebookLogin">
+                    <a href="#">Facebook으로 로그인</a>
+                </div>
+                <div class="forgetPw">
+                    <a href="#">비밀번호를 잊으셨나요?</a>
+                </div>
+            </div>
+        </div>
+        <div class=newjoin>
+            계정이 없으신가요?<a href="#" class="newjoinButton">가입하기</a>
+        </div>
+    </header>
+    <footer>
+        <ul class="footerZone">
+            <li><a href="#">Meta</a></li>
+            <li><a href="#">소개</a></li>
+            <li><a href="#">블로그</a></li>
+            <li><a href="#">채용 정보</a></li>
+            <li><a href="#">도움말</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">약관</a></li>
+            <li><a href="#">인기 계정</a></li>
+            <li><a href="#">위치</a></li>
+            <li><a href="#">Instagram Lite</a></li>
+            <li><a href="#">연락처 업로드 & 비사용자</a></li>
+        </ul>
+    </footer>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

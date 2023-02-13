@@ -1,0 +1,716 @@
+* {
+  margin: 0;
+  /* 마진 리셋 */
+  padding: 0;
+  /* 패딩 리셋 */
+  box-sizing: border-box;
+  /* 박스 영역은 테두리까지 */
+}
+
+a {
+  text-decoration: none;
+  /* 텍스트 링크 밑줄 없애기 */
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 650px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 2fr 6fr 5fr;
+  /* 1:4:3 이라는 뜻 */
+  grid-template-rows: 15vh 85vh;
+  /* 중간 메인을 2:8로 나눈다는 뜻*/
+  grid-template-areas:
+    "header main_top footer"
+    "header main_bottom footer";
+  /*헤더와 풋터는 한층, 메인은 두층*/
+}
+
+/* 로고부터 네비게이션 */
+header {
+  grid-area: header;
+  flex-direction: row;
+  border-right: solid;
+  border-width: 2px;
+  border-color: #dddddd;
+}
+
+#logo {
+  width: 100%;
+  /*  너비 */
+  padding-top: 25px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+#logo img {
+  width: 120px;
+}
+
+nav {
+  height: 620px;
+}
+
+#navMenu {
+  height: 85%;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#navMenu :hover {
+  background-color: rgba(242, 242, 242, 0.947);
+  transition: 0.7s;
+}
+
+#navMenuLast :hover {
+  background-color: rgba(242, 242, 242, 0.947);
+  transition: 0.7s;
+}
+
+.navMenuLi {
+  width: 90%;
+  height: 45px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#navMenuLast {
+  height: 15%;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navMenuLi img {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.navMenuLi a {
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.navMenuLi span {
+  margin-right: 10px;
+  display: flex;
+  width: 20px;
+  /* 가로 크기 */
+  height: 20px;
+  /* 세로 크기 */
+  border-radius: 50%;
+}
+
+#navProfile {
+  background-image: url("https://image.fmkorea.com/files/attach/new2/20220819/486616/4891254489/4937482053/6448573ffb192ec4292c4a6cebbf437e.jpeg");
+  background-size: cover;
+}
+
+/* 스토리영역 */
+.top {
+  background-color: rgba(242, 242, 242, 0.947);
+  grid-area: main_top;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#storyzone {
+  width: 403px;
+  height: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  border: solid;
+  border-width: 2px;
+  border-color: #dddddd;
+  padding-left: 0.5px;
+  padding-right: 0.5px;
+}
+
+.story {
+  height: 65px;
+  width: 65px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3.5px;
+  padding-right: 3.5px;
+}
+
+.story span {
+  display: flex;
+  /* 블록 레벨로 */
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  /* 가운데 배치 */
+  width: 50px;
+  /* 가로 크기 */
+  height: 50px;
+  /* 세로 크기 */
+  border-radius: 50%;
+  /* 테두리 둥글게. border-radius: 150px로 해도 됨 */
+  /* border: 2px solid #e93b3b; */
+  /* 테두리 스타일 */
+  background-image: url("https://miro.medium.com/max/1400/1*WvLUpPCDw4ZAOyTg3w5nYA.jpeg");
+  background-size: cover;
+}
+
+.story span span {
+  display: block;
+  /* 블록 레벨로 */
+  margin: 0 auto;
+  /* 가운데 배치 */
+  width: 46px;
+  /* 가로 크기 */
+  height: 46px;
+  /* 세로 크기 */
+  border-radius: 50%;
+  /* 테두리 둥글게. border-radius: 150px로 해도 됨 */
+  border: 2px solid white;
+  /* 테두리 스타일 */
+}
+
+#story1 {
+  background-image: url("https://image.fmkorea.com/files/attach/new2/20220819/486616/4891254489/4937482053/6448573ffb192ec4292c4a6cebbf437e.jpeg");
+  background-size: cover;
+}
+#story2 {
+  background-image: url("https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/123/935adaaf4e926848105d15be6e97985c_res.jpeg");
+  background-size: cover;
+}
+#story3 {
+  background-image: url("https://img.seoul.co.kr/img/upload/2021/07/02/SSI_20210702145200_O2.jpg");
+  background-size: cover;
+}
+#story4 {
+  background-image: url("http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2021/02/22/3rV6vmE1QI9p637495791850741663.jpg");
+  background-size: cover;
+}
+#story5 {
+  background-image: url("https://www.fnnews.com/resource/media/image/2022/06/19/202206190316408898_l.jpg");
+  background-size: cover;
+}
+#story6 {
+  background-image: url("https://img.khan.co.kr/news/2020/10/16/2020101601001687000138341.jpg");
+  background-size: cover;
+}
+#story7 {
+  background-image: url("https://cdn.mindgil.com/news/photo/202201/73470_12193_834.png");
+  background-size: cover;
+}
+#story8 {
+  background-image: url("https://img.hankyung.com/photo/202210/BF.31468284.1.jpg");
+  background-size: cover;
+}
+#story9 {
+  background-image: url("https://image.fmkorea.com/files/attach/new2/20220819/486616/4891254489/4937482053/6448573ffb192ec4292c4a6cebbf437e.jpeg");
+  background-size: cover;
+}
+
+.story p {
+  font-size: 9px;
+}
+
+/* 피드영역 */
+.bottom {
+  background-color: rgba(242, 242, 242, 0.947);
+  grid-area: main_bottom;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#feedzone {
+  width: 403px;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-width: 2px;
+  border-color: #dddddd;
+  border-radius: 5px;
+}
+
+#profile {
+  width: 400px;
+  height: 8%;
+  display: flex;
+}
+
+#feedSelfie {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+#feedSelfie span {
+  display: block;
+  /* 블록 레벨로 */
+  margin: 0 auto;
+  /* 가운데 배치 */
+  width: 30px;
+  /* 가로 크기 */
+  height: 30px;
+  /* 세로 크기 */
+  border-radius: 50%;
+  /* 테두리 둥글게. border-radius: 150px로 해도 됨 */
+  border: 1px solid #dddddd;
+  /* 테두리 스타일 */
+}
+
+#feedSelfie1 {
+  background-image: url("https://image.fmkorea.com/files/attach/new2/20220819/486616/4891254489/4937482053/6448573ffb192ec4292c4a6cebbf437e.jpeg");
+  background-size: cover;
+}
+
+#feedId {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+#feedId a {
+  font-size: 10pt;
+  font-weight: bold;
+  color: black;
+}
+
+#feedOption {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#feedOption img {
+  height: 20px;
+}
+
+#photozone {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#buttonzone {
+  width: 400px;
+  height: 6%;
+  background-color: white;
+  display: flex;
+}
+
+#buttonzone img {
+  width: 20px;
+  margin-left: 15px;
+}
+
+#leftButton {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#rightButton {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 15px;
+}
+
+/* 댓글 영역*/
+#commentzone {
+  width: 400px;
+  height: 150px;
+  display: block;
+  flex-direction: column;
+}
+
+#commentzone hr {
+  border: solid 1px;
+  border-color: #dddddd;
+}
+
+#commentzone div {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+#goodcount {
+  height: 20px;
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+#userCommentzone {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+#userCommentzone a {
+  font-size: 10pt;
+  font-weight: bold;
+  color: black;
+}
+
+#userComment {
+  font-size: 8pt;
+  color: black;
+}
+
+#moreWatch {
+  font-size: 8pt;
+  color: gray;
+  font-weight: bold;
+}
+
+#commentCount {
+  height: 20px;
+  font-size: 8pt;
+  color: gray;
+  font-weight: bold;
+}
+
+#firstCommentzone {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+#firstCommentzone a {
+  font-size: 10pt;
+  font-weight: bold;
+  color: black;
+}
+
+#firstComment {
+  width: 75%;
+  font-size: 8pt;
+  color: black;
+}
+
+#commentGood img {
+  height: 10px;
+}
+
+#uploaddate {
+  height: 20px;
+  font-size: 4pt;
+  color: gray;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#commentWritezone {
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#emoji {
+  height: 100%;
+  width: 7%;
+  display: flex;
+  align-items: center;
+}
+
+#emoji img {
+  height: 20px;
+}
+
+#commentWrite {
+  height: 100%;
+  width: 83%;
+  display: flex;
+  align-items: center;
+  font-size: 8pt;
+  color: gray;
+  font-weight: bold;
+}
+
+#commentSubmit {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-items: flex-end;
+  align-items: center;
+  font-size: 8pt;
+  color: rgb(3, 154, 188);
+  font-weight: bold;
+}
+
+/* #myId {
+    height: 100%;
+    width: 85%;
+    display: flex;
+    align-items: center;
+} 
+
+/* 친구추천 영역 */
+footer {
+  background-color: rgba(242, 242, 242, 0.947);
+  grid-area: footer;
+  display: flex;
+}
+
+#friendzone {
+  width: 350px;
+  height: 550px;
+  margin-left: 20px;
+}
+
+#myInfo {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#mySelfie {
+  height: 80%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+#mySelfie span {
+  display: flex;
+  /* 블록 레벨로 */
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  /* 가운데 배치 */
+  width: 50px;
+  /* 가로 크기 */
+  height: 50px;
+  /* 세로 크기 */
+  border-radius: 50%;
+  /* 테두리 둥글게. border-radius: 150px로 해도 됨 */
+  /* border: 2px solid #e93b3b; */
+  /* 테두리 스타일 */
+  background-image: url("https://miro.medium.com/max/1400/1*WvLUpPCDw4ZAOyTg3w5nYA.jpeg");
+  background-size: cover;
+}
+
+#mySelfie span span {
+  display: block;
+  /* 블록 레벨로 */
+  margin: 0 auto;
+  /* 가운데 배치 */
+  width: 46px;
+  /* 가로 크기 */
+  height: 46px;
+  /* 세로 크기 */
+  border-radius: 50%;
+  /* 테두리 둥글게. border-radius: 150px로 해도 됨 */
+  border: 2px solid white;
+  /* 테두리 스타일 */
+  background-image: url("https://image.fmkorea.com/files/attach/new2/20220819/486616/4891254489/4937482053/6448573ffb192ec4292c4a6cebbf437e.jpeg");
+  background-size: cover;
+}
+
+#myAcount {
+  height: 80%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+}
+
+#myId {
+  font-size: 10pt;
+  font-weight: bold;
+  color: black;
+}
+
+#myName {
+  font-size: 8pt;
+  font-weight: bold;
+  color: rgb(131, 131, 131);
+}
+
+#acountSwitch {
+  height: 80%;
+  width: 20%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+#acountSwitch a {
+  font-size: 8pt;
+  font-weight: bold;
+  color: rgb(3, 154, 188);
+}
+
+#recommend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#recommend p {
+  font-size: 10pt;
+  font-weight: bold;
+  color: rgb(131, 131, 131);
+}
+
+#recommend a {
+  font-size: 9pt;
+  font-weight: bold;
+  color: black;
+}
+
+.recommendFriend {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.friendSelfie {
+  height: 80%;
+  width: 12%;
+  display: flex;
+  align-items: center;
+}
+
+.friendSelfie span {
+  display: block;
+  /* 블록 레벨로 */
+  margin: 0 auto;
+  /* 가운데 배치 */
+  width: 30px;
+  /* 가로 크기 */
+  height: 30px;
+  /* 세로 크기 */
+  border-radius: 50%;
+  /* 테두리 둥글게. border-radius: 150px로 해도 됨 */
+  border: 1px solid #dddddd;
+  /* 테두리 스타일 */
+}
+
+#friendSelfie1 {
+  background-image: url("https://issuesdaily.com/wp-content/uploads/2022/01/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-01-15-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-4.00.31.png");
+  background-size: cover;
+}
+
+#friendSelfie2 {
+  background-image: url("http://openimage.interpark.com/goods_image_big/1/7/4/0/8262051740_l.jpg");
+  background-size: cover;
+}
+
+#friendSelfie3 {
+  background-image: url("https://cdn.tubefactory.co.kr/tubefactory/2022/09/23144925/image-1067.png");
+  background-size: cover;
+}
+
+#friendSelfie4 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05FKRbwYdbvIz_7q6yf_3Oevdk6NIoPIFrA&usqp=CAU");
+  background-size: cover;
+}
+
+#friendSelfie5 {
+  background-image: url("https://kwonorg.files.wordpress.com/2019/12/eab68cec8381ec9ab0.jpg?w=438&h=334&crop=1");
+  background-size: cover;
+}
+
+.friendAcount {
+  height: 80%;
+  width: 63%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 7px;
+}
+
+.friendId {
+  font-size: 9pt;
+  font-weight: bold;
+  color: black;
+}
+
+.friendInfo {
+  font-size: 8pt;
+  font-weight: bold;
+  color: rgb(131, 131, 131);
+}
+
+.acountFollow {
+  height: 80%;
+  width: 25%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.acountFollow a {
+  font-size: 8pt;
+  font-weight: bold;
+  color: rgb(3, 154, 188);
+}
+
+#footerList {
+  height: 120px;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+}
+
+#footerList ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  font-size: 8pt;
+  color: #cecece;
+}
+
+#footerList ul a {
+  font-size: 8pt;
+  color: #cecece;
+}
+
+#footerList ul b {
+  font-size: 8pt;
+  color: #cecece;
+}

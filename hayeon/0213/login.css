@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container {
+    margin: 0 auto; /*화면 중앙에 배치*/
+    width: 100%; /*화면중앙에 배치*/
+}
+
+/*header*/
+header {
+    width: 100%;
+    height: 90px;
+    /* background-color: rgb(149, 202, 242); */
+}
+
+/*header > header_box*/
+#header_box {
+    width: 90%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: rgb(150, 196, 248); */
+}
+
+/*header > header_box > topmenu_box*/
+.topmenu_box {
+    width: 250px;
+    height: 90px;
+    /* background-color: rgb(207, 154, 254); */
+}
+
+/*header > header_box > logo*/
+.logo {
+    width: 250px;
+    height: 90px;
+    /* background-color: rgb(207, 154, 254); */
+}
+
+/*header > header_box > search_box*/
+.search_box {
+    width: 150px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(207, 154, 254); */
+}
+
+.search {
+    width: 30px;
+    height: 30px;
+}
+
+/*contents*/
+#contents {
+    width: 100%;
+    height: 700px;
+    /* background-color: rgb(241, 208, 168); */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+/*contents > login_box*/
+.login_box {
+    width: 1000px;
+    height: 600px;
+    /* background-color: rgb(245, 178, 79); */
+    display: flex;
+    justify-content: center;
+}
+
+/*contents > login_box > login*/
+.login {
+    width: 450px;
+    height: 600px;
+    /* background-color: rgb(57, 236, 137); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*contents > login_box > login > login_title*/
+.login_title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+/*contents > login_box > login > ID*/
+.user_id {
+    width: 450px;
+    height: 45px;
+    margin: 5px 0px 20px 0px;
+    padding-left: 10px;
+}
+
+.user_pw {
+    width: 450px;
+    height: 45px;
+    margin: 5px 0px 20px 0px;
+    padding-left: 10px;
+}
+.enter {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    color: beige;
+    font-size: 17px;
+    height: 50px;
+    margin: 50px 0px 20px 0px;
+}
+
+/*contents > login_box > login > links*/
+.links {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid rgb(60, 60, 60);
+    height: 50px;
+    margin: 5px 0px 15px 0px;
+}
+
+.login_logo {
+    width: 22px;
+    height: 22px;
+}
+
+.id_save {
+    display: flex;
+    flex-direction: row;
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.login1 {
+    padding-left: 9px;
+}
+
+/*contents > login_box > login > id_find*/
+.id_find {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+
+.id_find1 {
+    width: 90px;
+    height: 20px;
+}
+.id_find2 {
+    width: 120px;
+    height: 20px;
+    border-left: 1px solid rgb(90, 90, 90);
+    border-right: 1px solid rgb(90, 90, 90);
+}
+.id_find3 {
+    width: 90px;
+    height: 20px;
+}
+
+.find_border {
+}
+
+/*footer*/
+footer {
+    width: 1200px;
+    height: 250px;
+    /* background-color: blue; */
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+#info {
+    /* background-color: rgb(102, 185, 51); */
+    border-top: 1px solid rgb(35, 35, 35);
+    padding-top: 20px;
+}
+
+/*footer > CS*/
+.CS {
+    text-align: center;
+    font-size: 15px;
+}
+.company {
+    text-align: center;
+    font-size: 10px;
+    padding-top: 10px;
+}

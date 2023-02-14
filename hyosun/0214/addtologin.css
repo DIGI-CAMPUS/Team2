@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Do+Hyeon&family=Itim&family=Poppins:wght@300&family=Prompt:ital,wght@1,600&display=swap');
+
+body{
+  width:1200px;
+  height: 696px;
+  /* width : 1500px;
+  height : 2000px; */
+   /*화면의 픽셀을 아주 키워주어 스크롤이 필수가 될 수 있게*/
+  /* background : linear-gradient( white,pink); */
+  /* background : linear-gradient(to right, red, white);
+  transition: background 1s ease; */
+  /* 화면 스크롤 이하로 그라데이션을 주고 싶을 때*/
+}
+
+
+
+body {
+  background-color: pink;
+  animation : colorLoop 10s ease-in-out infinite;
+}
+
+@keyframes colorLoop {
+  0% { background-color : pink;}
+  25% { background-color : lightcoral;}
+  50% { background-color :  papayawhip;}
+  75% { background-color :  coral;}
+ }
+
+
+#scrollButton {
+  position : fixed;
+  top : 10px;
+  left : 10px;
+} /*디브를 픽스시켜서 스크롤 버튼을 누를 수 있게 */
+
+.section{
+  position: fixed;
+  left : 600px;
+}
+
+
+footer{
+  display: flex;
+  justify-content: center;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+#sns{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sns{
+  margin : 5px 5px 5px 5px;
+  display: flex;
+  background-color: rgb(76, 93, 245);
+  color : white;
+  border : none;
+  border-radius: 10px;
+  height : 30px;
+  width : 300px;
+  padding : 10px 5px 10px 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.sns2{
+  background-color: rgb(233, 233, 72);
+  color: black;
+}
+
+.login{
+  padding : 10px 5px 15px 5px; 
+  margin : 5px 5px 5px 5px;
+  background-color : rgb(223, 13, 13);
+  border : none;
+  border-radius: 10px;
+  height : 45px;
+  width : 300px;
+  color : white;
+  font-size: 20px;
+  text-align: center;
+}
+
+input:focus{
+  outline: 3px solid blue;
+}

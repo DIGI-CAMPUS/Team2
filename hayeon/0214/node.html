@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>querySelector</title>
+    </head>
+    <body>
+        <div class="box-1">
+            <p class="text">text-1</p>
+            <p class="text">text-2</p>
+        </div>
+        <div class="box-2">
+            <p class="text">text-3</p>
+            <p class="text">text-4</p>
+        </div>
+        <script>
+            //범용성 때문에 query사용, HTMLCollection은 실시간 라이브 컬렉션
+            //Nodelist는 정적 컬렉션
+            //const el = document.querySelector(".box-1"); //css선택자 사용
+            const el = document.getElementsByClassName("box-1")[0].children;
+            //const el = document.querySelectorAll(".box-1 .text");
+            console.log(el);
+            //HTMLCollection과 Nodelist 차이
+            //모두 유사 배열 객체이면서 (반복가능한) 이터러블
+            //따라서 둘 다 length 프로퍼티를 가지므로 객체를 배열처럼 접근할 수 있고,
+            //반복문을 돌 수 있다. 그러나 유사 배열 객체이기 때문에 자바스크립트에서 제공하는
+            //배열 객체의 메소는 사용 불가 (ex. map, forEach, reduce 등)
+        </script>
+    </body>
+</html>
+HTMLCollection - 태그 : getElementsByTagName,getElementsByClassName - 프로퍼티 :
+HTMLCollection.length - 메서드 : HTMLCollection.item(),
+HTMLCollection.namedItem() - live 객체 : 노드 객체의 상태 변화를 실시간으로
+반영O - forEach 함수 사용 불가 - NodeList - 태그 : querySelectorAll - 프로퍼티 :
+NodeList.length - 메서드 : NodeList.item(), NodeList.entries(),
+NodeList.forEach(), NodeList.keys(), NodeList.values() - 대부분 Non-live 객체 :
+노드 객체의 상태 변화를 실시간으로 반영X, 과거의 정적 상태를 유지 - childNodes
+프로퍼티는 live 객체 - forEach 사용 가능 - 향상된 for문 배열 자체를 순회하는
+메소드

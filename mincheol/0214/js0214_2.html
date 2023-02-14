@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector</title>
+</head>
+
+<body>
+  <div class="box-1">
+    <p class="text">text-1</p>
+    <p class="text">text-2</p>
+  </div>
+
+  <div class="box-2">
+    <p class="text">text-1</p>
+    <p class="text">text-2</p>
+  </div>
+
+  <script> //범용성 때문에 query 사용, HTMLCollection은 실시간 라이브컬렉션
+    // Nodelist는 정적 컬렉션
+    // const el = document.querySelector(".box-1"); // CSS선택자 사용
+    // const el = document.getElementsByClassName("box-1")[0].children;
+    const el = document.querySelectorAll(".box-1 .text");
+    console.log(el);
+  </script>
+
+  <!-- 
+    - HTMLCollection
+    - 태그 : getElementsByTagName,getElementsByClassName
+    - 프로퍼티 : HTMLCollection.length
+    - 메서드 : HTMLCollection.item(), HTMLCollection.namedItem()
+    - live 객체 : 노드 객체의 상태 변화를 실시간으로 반영O
+    - forEach 함수 사용 불가
+    - NodeList
+    - 태그 : querySelectorAll
+    - 프로퍼티 : NodeList.length
+    - 메서드 : NodeList.item(), NodeList.entries(), NodeList.forEach(), NodeList.keys(), NodeList.values()
+    - 대부분 Non-live 객체 : 노드 객체의 상태 변화를 실시간으로 반영X, 과거의 정적 상태를 유지
+    - childNodes 프로퍼티는 live 객체
+    - forEach 사용 가능 - 향상된 for문 배열 자체를 순회하는 메소드-->
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿼리셀럭터를 활용한 스타일 지정</title>
+    <style>
+        .red-color{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id = "text" class = "red-color">text</p>
+<!--     <script>
+        const ee = document.querySelector("p"); //노드 선택 CSS선택자는 .이나 #을 써야하는데 여기는 p라는 태그를 선택함
+        ee.style.color = "red";
+        ee.style.fontSize = "50px";
+    </script> -->
+
+<!--     <script>
+        const ee = document.querySelector("#text"); 
+        setInterval(fuction(){
+            ee.classList.toggle("red-color");
+        }, 1000);      
+    </script> -->
+
+    <script>
+        const ee = document.querySelector("#text"); //노드 선택, 지정
+        ee.classList.remove("red-color"); //삭제 : 뭘 지울껀지
+    </script>
+    
+</body>
+</html>

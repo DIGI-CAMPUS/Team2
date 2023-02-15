@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Node</title>
+
+</head>
+
+<body>
+
+  <script>
+    const CEl = document.createElement("a");
+    document.body.appendChild(CEl);
+
+    const txtEl = document.createTextNode("NAVER");
+    document.querySelector("a").appendChild(txtEl);
+
+    const hrefAttr = document.createAttribute("href");
+    hrefAttr.value = "http://www.naver.com";
+    //document.querySelector("a").setAttribute("href", hrefAttr.value);
+    document.querySelector("a").setAttributeNode(hrefAttr);
+
+  </script>
+</body>
+
+</html>

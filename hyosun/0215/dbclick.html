@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Double Click Liked Example</title>
+  <script>
+    function like() {
+      var function_icons= document.querySelector(".function_icons img");
+      if (function_icons.src ==="https://cdn-icons-png.flaticon.com/512/2589/2589175.png"){
+        function_icons.src= "https://cdn-icons-png.flaticon.com/512/1077/1077035.png";
+      } else {
+        function_icons.src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png"
+      }
+    }     
+  </script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div id="message" ondblclick="like()"><img src="https://theweddingavenue.co.uk/wp-content/uploads/2022/10/gold-wedding-rings.jpeg" alt="" width="420px" height="350px"></div>
+
+  <div class="function_icons2">
+    <ul> 
+      <div class="function_icons"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="좋아요" height="15px"></div>
+    </ul>
+    </div>
+
+</body>
+</html>

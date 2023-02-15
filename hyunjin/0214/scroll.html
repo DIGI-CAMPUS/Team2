@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll To & By</title>   <!-- 사용자의 편리성 증진을 위한 스크롤 활용 -->
+    <style>
+        body{
+            width : 5000px;
+            height: 5000px;
+            background : linear-gradient(rgb(53, 106, 232), rgb(236, 231, 83));
+        }    /* 스크롤이 생길 만큼 크게하기 위함 */
+
+        div{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }  /* 스크롤해도 버튼고정 */
+    </style>
+</head>
+<body>
+    <div>
+   <!--  <button onclick="sTo()">scrollTo(100,200)</button>
+    <button onclick="sBy()">scrollBy(100,200)</button> -->
+    <button onclick="sTo()">scrollTo(4000)</button>
+    <button onclick="sBy()">scrollBy(600)</button>
+    </div>
+    <script>
+   /*      function sTo(){
+            window.scrollTo(100, 200); //x좌표, y좌표
+            // window.scrollTo(left : 100, top : 200);  // 스크롤내려보다가 버튼 누르면 원상복귀 'like 맨위로'
+        }
+        function sBy(){
+            window.scrollBy(100, 200); //x좌표, y좌표
+            // window.scrollBy(left : 100, top : 200);   
+            // 누를때마다 이만큼 이동함. 특정 이벤트 발생 시 내가 작성한 폼에서 특정만큼 이동되도록할 때 활용 
+        } */
+
+        function sTo(){
+            window.scrollTo({top:0, behavior:'smooth'});
+        }
+        function sBy(){
+            window.scrollBy({top:600, behavior:'smooth'});
+        }
+
+    </script>
+</body>
+</html>

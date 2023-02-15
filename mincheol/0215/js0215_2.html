@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>attribute</title>
+
+</head>
+
+<body>
+  <a href="https://www.naver.com">naver</a>
+
+  <script>
+    const aEl = document.querySelector("a")
+    const href = aEl.getAttribute("href");
+    aEl.setAttribute("href", "https://www.daum.net");
+    aEl.innerText = "daum";
+    aEl.setAttribute("target", "_blank");
+
+  </script>
+</body>
+
+</html>

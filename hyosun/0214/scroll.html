@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scrollTo</title>
+  <style> 
+    body{
+      width : 5000px;
+      height : 5000px;
+      background : linear-gradient( white,pink);
+    } /*화면의 픽셀을 아주 키워주어 스크롤이 필수가 될 수 있게*/
+    div {
+      position : fixed;
+      top : 10px;
+      left : 10px;
+    } /*디브를 픽스시켜서 스크롤 버튼을 누를 수 있게 */
+  </style>
+</head>
+<body>
+  <div>
+    <button onclick = "sTo()">홈으로</button>
+    <button onclick = "sBy()">조금씩 아래로</button>
+  </div>
+  
+  <script>
+    function sTo() {
+      scrollTo({top:0000,behavior:'smooth'}); //x좌표, y좌표
+      //scrollTo(left : 100, top : 200); 
+    }
+    function sBy() {
+      scrollBy({top:600,behavior:'smooth'}); //x좌표, y좌표
+      //scrollTo(left : 100, top : 200); 
+    }
+  </script>
+</body>
+</html>
+
+
+

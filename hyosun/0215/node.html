@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=l.0">
+  <title>create Node</title>
+</head>
+<body>
+  <script>
+    //요소 노드 생성
+    const CEl = document.createElement("a");
+    document.body.appendChild(CEl);               //덧붙이기
+
+    //텍스트 노드 생성
+    const txtEl = document.createTextNode("NAVER");
+    document.querySelector("a").appendChild(txtEl); //appendChild 노드를 어떤 노드의 마지막 자식으로 추가, 요소끼리 이동할 때도 사용
+
+    //href 속성 추가
+    const hrefAtter = document.createAttribute("href");
+    hrefAtter.value = 'https://www.naver.com';
+    document.querySelector("a").setAttributeNode(hrefAtter);
+  </script>
+  
+</body>
+</html>

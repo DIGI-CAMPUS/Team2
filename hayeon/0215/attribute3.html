@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Attribute</title>
+        <style>
+            .red-color {
+                color: red;
+            }
+        </style>
+    </head>
+    <!-- 604p -->
+    <body>
+        <a href="http://www.naver.com" class="red-color">naver</a>
+        <script>
+            const aEl = document.querySelector("a"); //노드선택
+
+            aEl.removeAttribute("class"); //target 속성값을 _blank로
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>create Node</title>
+    </head>
+    <!--605p-->
+    <body>
+        <script>
+            //요소노드 생성
+            const CEl = document.createElement("a");
+            document.body.appendChild(CEl); //덧붙이기
+
+            //텍스트노드 생성
+            const texEl = document.createTextNode("naver");
+            document.querySelector("a").appendChild(texEl); //
+
+            //href속성 추가
+            const hrefAttr = document.createAttribute("href");
+            hrefAttr.value = "http://www.naver.com";
+            document.querySelector("a").setAttributeNode(hrefAttr);
+        </script>
+    </body>
+</html>

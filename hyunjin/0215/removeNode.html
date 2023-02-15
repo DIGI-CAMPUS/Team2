@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>text 1</p>
+    <a href="http://www.naver.com">NAVER</a>
+    <a href="http://www.daum.net">Daum</a>
+    
+    <script>
+        //요소 노드 생성
+        const CEl = document.querySelector("p");     //p태그 선정. p 하나만 선택. 복수의 p태그를 모두 선택하려면 querySelectorAll
+        CEl.parentNode.removeChild(CEl);              //부모노드에서 자슥노드 remove -> text 1 이라는 글자 삭제
+    </script>
+</body>
+</html>

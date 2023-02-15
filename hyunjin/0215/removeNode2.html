@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove Node 2</title>
+</head>
+<body> <!-- 전체 태그 삭제에 관한 예제임 -->
+    <p>text 1</p>
+    <a href="http://www.naver.com">NAVER</a>
+    <a href="http://www.daum.net">Daum</a>
+    
+    <script>
+        const childNodes = document.body.childNodes;    //바디 안에 있는 자슥들 선택
+        childNodes.forEach((node)=>{                    //forEach문(배열 순회 메서드)을 돌린다.. node라는 값 함수를 지정하고 
+            if(node.nodeName === "A")                  //소문자로 쓰면 작동 안됨.. 대문자로
+            node.parentNode.removeChild(node);         //A와 같은 값(<a>태그)이 있으면 찾아서 다 삭제해달라
+        });    
+    </script>
+</body>
+</html>

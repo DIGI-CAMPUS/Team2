@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Double Click Liked Example</title>
+  <script>
+    function like() {
+      var post_image = document.getElementsByClassName("post_image");
+      alert("double clicked!")
+    }
+    // function reset() {
+    //   var post_image = document.getElementById("post_image");
+      
+    // }
+  </script>
+  <style>
+    #post_image {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div  class="post_image" ondbclick="like()"> <!-- 게시 사진-->
+    <img  src="https://theweddingavenue.co.uk/wp-content/uploads/2022/10/gold-wedding-rings.jpeg" alt="" width="420px" height="350px">
+  </div>
+
+  <button onclick="reset()">Reset</button>
+</body>
+</html>

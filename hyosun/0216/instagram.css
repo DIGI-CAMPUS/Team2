@@ -1,0 +1,385 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box; 
+}
+a {text-decoration:none;  /* 텍스트 링크 밑줄 없애기 */ }
+ul {list-style: none;} /* 언더 바 없애기 */
+
+/**************그리드로 틀짜는 법******************************/
+
+body {
+  width: 100vw; /*vw viewwidth 전체너비의 비율대비로 보여줌*/
+  height: 700px;  /*화면의 세로 크기보다 적은 픽셀을 입력하면 스크롤이 생기지 않음*/
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr 3fr; /* 열을 기준으로 화면을 1:4:3 으로 나눔*/
+  grid-template-rows: 20vh 80vh; /* 행을 기준으로 화면을 20:80 으로 나눔*/
+  grid-template-areas:
+  "header main_top footer" /*3열 2행인 6개의 칸을 각각 이름 붙이고 */
+  "header main_bottom footer" /*동일 이름끼리는 같은 css설정이 가능케 함*/
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  padding : 20px 10px 10px 20px;
+  border:1px solid lightgray;
+  background-color:white;
+  grid-area: header;
+  }
+
+
+#logo img{
+  width:150px;
+} /*로고이미지*/
+
+
+.nav_bar{
+  display:inline-flex;
+  justify-content: left;
+  height:15px;
+  font-size: 12px;
+  margin: 10px 10px 10px 10px;
+  
+}
+
+#nav_bar{
+font-size: 25px;
+justify-content: space-between;
+align-items: center;
+background-color: white; 
+}
+
+#nav_bar :hover{
+  background-color: rgba(238, 238, 234, 0.626);
+  transition: 0.7s; 
+  }
+
+.small_profile{
+  
+  display:inline-flex;
+  justify-content: left;
+  height:15px;
+  font-size: 12px;
+  margin: 10px 10px 10px 10px;
+}
+
+.small_profile img{
+  width:15px;
+  height:15px;
+  border-radius: 100%;
+  margin: 0px 2px 2px 0px;
+}
+
+.etc{
+display:inline-flex;
+justify-content: left;
+height:15px;
+font-size: 12px;
+margin: 10px 10px 10px 10px;
+
+flex-direction: column;
+}
+
+/***************중앙 그리드*********************************/
+
+.top {
+  background-color: rgb(242, 239, 239);
+  grid-area: main_top;
+  display: flex;
+  justify-content: center;
+  align-items: center;/*section top이 main_top중 치우치지 않고 중앙에 있게*/
+  justify-content: flex-end; /*section top이 중앙그리드 우측에 있게*/
+  position : relative;
+}
+
+.bottom {
+  background-color: rgb(242, 239, 239);
+  grid-area: main_bottom;
+  display: flex;
+  justify-content:flex-end;
+  position : relative;
+}
+
+/**********************스토리 목록******************************/
+
+.container {
+  width : 420px;
+  display: flex;
+  flex-direction: row;
+}
+
+.stories {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size : 3mm;
+  height : 76px;
+  width : 410px;
+  background-color: white;
+  border:2px solid lightgray;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+} /***전체 스토리 바***/
+
+.stories img{
+  width:45px;
+  height:45px;
+  border-radius: 100%;
+  border : 2px solid white;;
+} /***전체 스토리 내 모든 프로필 사진***/
+
+.each_stories {
+  display: flex;
+  /* display : block;
+  align-items: center; */
+  justify-content : center;
+  flex-direction : column;
+  margin : 2px 2px 2px 2px;
+
+}
+
+.each_stories_block{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width : 63px;
+}
+
+.each_stories_image{
+  width: 45px;
+  margin-left:2px;
+  margin-top: 2px;
+  /* display:flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.each_stories_gradation {
+  width:50px;
+  height:50px;
+  border-radius: 100%;
+  background-image:url(https://static.vecteezy.com/system/resources/thumbnails/002/486/289/small/gradient-background-instagram-free-vector.jpg);
+  background-size: cover;
+} /*인스타 스토리 그라데이션 배경*/
+
+
+button {
+  border : none;
+  opacity :0.6;
+  z-index: 1;
+  height: 100%;
+  width: 7px;
+}
+
+#scrollLeft {
+  float:left;
+}
+
+#scrollRight {
+  float:right;
+}
+
+button:hover{
+  background-color: #222;
+  color: #fff;
+  opacity :0.6;
+  cursor : pointer;
+}
+
+button:focus {
+  outline:0;
+}
+
+/***************************************************/
+
+
+
+/*********************모달*************************/
+/**********************아래는 기존 템플릿**********************/
+
+.modal-container {
+  position: relative;
+  grid-area: top / 1 / bottom / 1;
+
+}
+
+.modal-container {
+  /* transform: translate(-50%, -50%); */
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  position:absolute;
+  display: none;
+  background-color: blue;
+  z-index: 1;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue;
+}
+
+.modal-close {
+  margin-top: 10px;
+  background-color: blue;
+}
+
+/*************************************************/
+
+.writer{
+  display: flex ;
+  width: 420px;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  align-items: center;  
+  padding : 0px 5px 0px 5px ;
+} /*작성자 아이디*/
+
+.writer img{
+  width:30px;
+  height:30px;
+  border-radius: 100%;
+  margin: 3px 2px 2px 5px;
+}
+
+.dots img{
+  width:15px;
+  height:11px;
+} /*작성자 아이디 옆 메뉴 점*/
+
+
+.inner_bottom {
+  background-color: white;
+  border:2px solid lightgray;
+  border-radius: 12px;
+  height: 550px;
+  width : 410px;
+  overflow:hidden;
+  position: absolute;
+  display: inline-block;
+  flex-flow: wrap column;
+  padding : 10px 0px 10px 0px;
+  align-items: flex-start;
+  /*이부분의 width를 grid에맞게채울수없을까?*/ 
+} /* 게시글 영역*/
+
+
+.function_icons {
+  display:inline-flex;
+  justify-content: left;
+  flex-direction: column;
+  height: 10px;
+  flex-grow:1;
+  margin: 0px 2px 2px 4px;
+}
+
+.function_icons ul {
+  width:100%;  
+}
+
+.post_react{
+  display: flex;
+  flex-direction: column;
+  flex-grow:1;
+  margin: 5px 2px 0px 10px;
+} /*게시글 및 반응영역*/
+
+.bookmark{
+  float:right;
+  margin-right : 5% ;
+} /*게시글 및 북마크*/
+
+
+/*그 밑의 게시글 텍스트 내용 양식*/
+.post_image {width : 100%;}
+
+.post_text{font-size:10px;}
+
+.bold{font-weight:bold;}
+
+.lighter{
+  color:lightgray;
+  font-weight: lighter;
+}
+
+.small_heart{
+  float:right;
+  margin-right:10px;
+}
+/**********************************/
+
+/************************푸터**********************************/
+
+
+footer {
+  background-color: rgb(242, 239, 239);
+  grid-area: footer ;
+  padding: 50px 5px 5px 20px;
+}
+
+.each_friends img{
+  width: 40px;
+  height:40px;
+  border-radius: 100%;
+}
+
+.friends_info{
+  color:gray;
+  font-weight:lighter;
+  font-size:small;
+}
+
+.friends_detail{
+  display: flex ;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  align-items: center;
+}
+
+.middle_index{
+  color:gray;
+  font-weight:lighter;
+  font-size:10px;
+  display: flex ;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  align-items: center;
+  padding: 5px 6px 8px 6px;
+}
+
+.see_all{
+  justify-content: flex-end;
+}
+
+
+.copyright{
+  color:rgb(215, 213, 213);
+  font-weight:lighter;
+  font-size:small;
+}/*우측하단소개글*/
+
+.follow{
+  color:blue;
+  font-weight: bold;
+  font-size:small;
+}
+
+.reply_smile{
+  height: 15px;
+  margin-right: 3px;
+}
+
+.post_reply{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}

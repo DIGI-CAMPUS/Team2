@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>property</title>
+    </head>
+    <body>
+        <button>클릭</button>
+
+        <script>
+            //요소노드에 이벤트를 넣어줄때 사용
+            const btnEl = document.querySelector("button");
+
+            btnEl.onclick = function () {
+                alert("click");
+            }; //방법1
+
+            btnEl.onclick = () => {
+                alert("click");
+            }; //방법2
+
+            btnEl.onclick = clickEvent;
+            function clickEvent() {
+                alert("click");
+            } //방법3
+        </script>
+    </body>
+</html>

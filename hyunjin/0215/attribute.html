@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute</title>
+<style>
+    .red-color{
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <!-- <a href ="https://www.naver.com" data-link ="네이버">NAVER</a> 예제1. 2. -->
+    <a href ="https://www.naver.com" class ="red-color">NAVER</a> <!-- 예제3. -->
+<!-- 기본형태:: element.setAttribute(속성명, 속성값); -->
+
+    <!-- <script>  //예제 1.
+        const aEl = document.querySelector("a");
+        const href = aEl.getAttribute("href");            //"href"라는 속성 선택
+        aEl.setAttribute("href", "http://www.daum.net");  // href 링크를 다음.net으로 바까라
+        aEl.innerText = "daum";                       // 이너텍스트도 바까라
+        aEl.setAttribute("target", "_blank");        //속성 추가 >> target 속성값을 _blank로 지정(새창열기)
+ 
+    </script> -->
+
+   <!--   <script>  //예제 2.
+    const aEl = document.querySelector("a");
+    aEl.setAttribute("data-link", "다음");     // data-link를 다음으로 바꿔라
+    aEl.setAttribute("class", "red-color");    //클래스를 .red-color로 바꿔라
+    </script> -->
+
+    <script>   //예제3
+        const aEl = document.querySelector("a");
+        aEl.removeAttribute("class"); //class 속성 삭제해줘
+    </script>
+
+</body>
+</html>

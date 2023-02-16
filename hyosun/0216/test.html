@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal Example</title>
+  <link rel="stylesheet" href="test.css"></style>
+</head>
+<body>
+
+
+  <header style="background-color: white;"><!--로고 및 네비게이션 영역-->
+    <div class="header" style="background-color: white;" >
+      <div id="logo"> <!--로고 영역-->
+        <img src="https://fontmeme.com/images/instagram-new-logo.png" alt="">
+      </div>
+
+      <nav> <!--네비게이션 영역-->
+        <ul id="nav_bar" >
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/4690/4690939.png" alt=""> &#160;&#160;홈</div></li>
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt=""> &#160;&#160; <span class="search-button">검색</span></div></li>
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/484/484136.png" alt="">&#160;&#160;탐색</div></li>
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/3864/3864763.png" alt="">&#160;&#160;릴스</div></li>
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/4121/4121446.png" alt="">&#160;&#160;메세지</div></li>
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="">&#160;&#160;알림</div></li>
+          <li><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/5054/5054075.png" alt="">&#160;&#160;만들기</div></li>
+          <li><div class="small_profile"><img src="https://yt3.ggpht.com/ytc/AMLnZu87ILUSh6f4SOVHn2Vx1BooJx12KIyi31LeLrNSiA=s900-c-k-c0x00ffffff-no-rj" alt="작성자프로필">&#160;&#160;프로필</div></li>
+          <li style="margin-top: 250px;"><div class="nav_bar"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="">&#160;&#160;더보기</div></li>
+        </ul>
+        
+      </nav>
+    </div>
+  </header> 
+
+<section class="grid-container">
+  <div class="top">
+    <div> top</div>
+  </div>
+  <div class="bottom">  
+    <div> bottom</div>
+  </div>
+  <section class="modal-container">
+    <div class="modal">
+      <div class="modal-content" style="background-color: red;"> 
+        <h2>Search</h2>
+        <input type="text" placeholder="Search...">
+        <button class="modal-close">Close</button>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+
+<footer></footer>
+
+  <script>
+    const searchButton = document.querySelector('.search-button');
+    console.log(searchButton);
+    const modal = document.querySelector('.modal');
+    const closeButton = document.querySelector('.modal-close');
+
+    searchButton.addEventListener('click', function() {
+      modal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

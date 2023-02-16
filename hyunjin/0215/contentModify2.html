@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콘텐츠 조작</title>
+</head>
+<body>
+    <p id = "title">Hello, <span style = "display: none;">Javascript!</span></p>
+    <script>
+        document.getElementById("title").textContent; // Hello, Javascripts! :: 텍스트면 다 표시하라
+        document.getElementById("title").innerText; // Hello, :: 내부 span 태그 인식해서 display: none; 적용.
+        document.getElementById("title").innerHTML; // Hello, <span style = "display: none;"~~ :: 태그 내 모든 값 인식
+ 
+        console.log(document.getElementById("title").textContent);   //콘솔창에서 확인
+        console.log(document.getElementById("title").innerText); 
+        console.log(document.getElementById("title").innerHTML); 
+     </script>
+
+    
+</body>
+</html>

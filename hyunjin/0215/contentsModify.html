@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Modify Set</title>
+</head>
+<body>
+    <p id = "textContent"></p>
+    <p id = "innerText"></p>
+    <p id = "innerHTML"></p>     <!-- 단락이름 지정 -->
+    <script>
+        document.querySelector("#textContent").textContent = '<strong>textContent</strong> 속성';   //.textContent를 메소드로 활용하겟다 & =''글자 입력
+        document.querySelector("#innerText").innerText = '<strong>innerText</strong> 속성';    // textContent, innerText는 태그도 속성으로 인식해버림.
+        document.querySelector("#innerHTML").innerHTML = '<strong>innerHTML</strong> 속성'; //innerHTML은 strong태그를 태그로 인식하는 디폴트값..
+    </script>
+
+    
+</body>
+</html>

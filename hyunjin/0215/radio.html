@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <form>
+        <label><input type = "radio" name = "color" value = "blue">파랑</label>
+        <label><input type = "radio" name = "color" value = "red">빨강</label>
+        <label><input type = "radio" name = "color" value = "green">초록</label>
+        <label><input type = "radio" name = "color" value = "purple">보라</label>
+    </form>
+
+    <script>
+        const radioEls = document.querySelectorAll("[type='radio']");
+        for(let i = 0; i < radioEls.length; i++){  
+            if(radioEls[i].value === 'green'){
+                radioEls[i].checked =true;
+            } 
+        }
+    </script>
+</body>
+</html>
+
+<!-- 위 코드는 JavaScript를 사용하여 문서에서 type 속성 값이 radio인 모든 요소를 선택하고, 해당 요소들 중에서 value 속성 값이 'green'인 요소의 checked 속성을 true로 설정하는 코드입니다.
+
+이 코드는 특정한 상황에서 사용될 수 있습니다. 예를 들어, 사용자에게 여러 가지 옵션 중에서 하나를 선택할 수 있는 라디오 버튼이 있는 폼을 구현한다고 가정해보겠습니다. 이 때, 폼이 처음 로드될 때 라디오 버튼 중에서 기본값으로 선택되어야 하는 옵션이 있다면, 위 코드를 사용하여 해당 라디오 버튼의 checked 속성을 true로 설정할 수 있습니다.
+
+따라서, 이 코드는 사용자 경험을 개선하고, 사용자가 라디오 버튼을 선택하기 전에 기본값이 무엇인지 미리 알려줄 수 있어 유용합니다. 하지만, 이 코드를 사용할 때는 항상 사용자 경험을 고려하여 적절한 값을 선택해야 하며, 사용자 입력에 따라 동적으로 변경되는 값에 대해서는 이 코드를 사용할 수 없습니다.  -->

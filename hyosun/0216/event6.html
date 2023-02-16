@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event object2</title>
+</head>
+<body>
+  <form>
+    <input type="text">
+    /*event5.html 은 마우스 클릭, 이번은 타자로 검색 시의 키값을 수집*/
+  </form>
+  
+  <script>
+    const inputEl = document.querySelector("input");
+    inputEl.addEventListener("keydown",function(event){
+      console.log(event);
+      console.log(`keycode:${event.keyCode}`);
+
+      /*'자바스크립트 키코드 값'을 구글링 하면 코드별 글씨를 알 수 있음*/
+      console.log(`ctrlKey:${event.ctrlKey}`);
+      console.log(`altKey:${event.altKey}`);
+      console.log(`shiftKey:${event.shiftKey}`);
+    })
+  </script>
+</body>
+</html>

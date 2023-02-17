@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery1</title>
+    <script src="js/jquery.js"></script>
+    <script>
+    // id는 #, class는 .으로 선택자 지정 //자바스크립트에 있는 것을 짜집기해서 라이브러리를 만들어 놓은 것
+    // 요소 선택자는 태그 지정
+    // 동시 선택가능 $("#kb, h1") 또는 ("h1, #kb") 가능,   $("h1#kb") h1중에서 id값이 같은 것만 지정 (#kb안에 있는 h1만 선택) 
+     /*    $(function(){
+            $("*").css("border", "1px solid blue"); // 전체 선택자 * , .css() css 속성을 사용 하겠다, *을 h1으로 바꾸면 h1만 보더적용됨
+        }); //제이쿼리 사용 시에는 $로 시작. 자바 function()와 같은 거임.. $(function(){~
+ */
+
+         $(function(){
+            $("#kb").css("background-color", "#ff0")   // id 선택자
+            .css("border", "4px solid #f00");   //체이닝 기법: 선택한 요소에 메서드를 연속해서 사용
+         });
+         $(function(){
+            $("a").attr("href", "http://www.naver.com")
+            .attr("target", "_blank").css("font-size", "100px"); // 새 창 띄우기 속성 적용 + 폰트사이즈 스타일 적용 (체이닝 기법)
+         })
+         //선택한 요소에 지정한 스타일 적용
+         //$("css선택자").css("스타일 속성명", "값")
+         //선택한 요소에 지정한 속성 적용
+         //$("css선택자").attr("속성명", "값")   
+        //이런 것들을 '직접 선택자'라고 한다
+    </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h2 id="kb">선택자</h2>
+    <a>국민</a>
+    <h3>직접 선택자</h3>
+</body>
+</html>

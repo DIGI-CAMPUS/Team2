@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>object2</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" />
+        </form>
+        <script>
+            const inputEl = document.querySelector("input");
+            inputEl.addEventListener("keydown", function (event) {
+                //내부적으로 이벤트 개체를 매개변수로 전달
+                console.log(event);
+                /* console.log(`keycode:${event.clientX}`);
+                console.log(`ctrlkey:${event.ctrlkey}`);
+                console.log(`altkey:${event.altkey}`);
+                console.log(`shiftkey:${event.shiftkey}`); */
+            });
+        </script>
+    </body>
+</html>

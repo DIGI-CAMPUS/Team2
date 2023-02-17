@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>event2</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" onfocus="focusEvent()" onblur="blurEvent()" />
+        </form>
+
+        <script>
+            function focusEvent() {
+                console.log("focus on"); //()이벤트가 발생되었을 때 콘솔창에 ""입력해줘
+            } //어디에 얼마나 클릭했는지. 데이터 분석 가능
+            function blurEvent() {
+                console.log("focus out");
+            }
+        </script>
+    </body>
+</html>

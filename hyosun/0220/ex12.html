@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" cotntent="width=device-width, initial-scale=1.0">
+  <title>eventdelete</title>
+  <script src="jquery.js"></script>
+
+  <!--이벤트 삭제하는 소스-->
+  
+  <script>
+    $(function(){
+
+      $(".btn_1").on("mouseover", function(){
+        alert("WELCOME!"); 
+      });
+
+      $(document).on("mouseover", ".btn_2", function(){
+        alert("WELCOME!!!"); //버튼 생성한 곳에 등록
+      });
+
+      var btn_2 = $("<p><button class=\"btn_2\">버튼2</button></p>");
+      $("#wrap").append(btn_2); //append 는 큰 따옴표 내용 그대로 붙여주기 
+      //역슬래시 사용해서 인식할 수 있게 만들기 
+
+      $(".del_1").on("click", function(){ //그룹으로 추가할 때는 .on 
+        $(".btn_1").off("mouseover");
+      });
+      $(".del_2").on("click",function(){
+        $(document).off("mouseover",".btn_2"); 
+        //위와 똑같은 해지 인데 document라는 객체 사용해서 할 때
+      });
+      
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="wrap">
+    <p><button class="btn_1">버튼1</button></p>
+  </div>
+  <p>
+    <button class="del_1">버튼1 이벤트 해지</button>
+    <button class="del_2">버튼2 이벤트 해지</button>
+  </p>
+
+</body>
+</html>

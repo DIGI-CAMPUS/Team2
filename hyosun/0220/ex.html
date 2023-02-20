@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready</title>
+  <script src="jquery.js"></script>
+  <script>
+      $(function(){
+
+        $(document).ready(function(){
+          var h1 = $(".img1").height();
+          console.log("ready:",h1); //ready : 값
+        });
+
+  //ready 메소드는 DOM이 완전히 저장되어 계산될 준비가 되었을 때
+  //함수를 실행시킨다. 즉, 전체 HTML 문서가 로딩될 때까지 기다린다.
+  //이는 Jquery코드를 </body>태그 바로 앞에 두어도 같은 효과를 본다.
+
+  // 이것이 필요한 이유는 DOM이 전부 로딩되기 전에 Jquery가 먼저 실행될 경우,
+  // 예상치 못한 에러가 발생할 수 있기 떄문이다.
+  // 요소 값이 null, undefined으로 입력될 경우 
+  // 잘 짜여진 코드임에도 불구하고 시간차로 인해 에러가 발생하여 수정이 어려울 수 있다. 
+
+  // 이는 특히 요소가 이미지, 동영상 등 큰 크기의 파일일 때 더 그러하다.
+        $(window).load(function(){
+          var h2 = $(".img1").height();
+          console.log("load:", h2); //load : 값
+        });
+      })
+  </script>
+</head>
+<body>
+  <p>
+    <img src="https://place-hold.it/300x300" class="img1">버튼1</img>
+  </p>
+  <p>내용</p>
+  <p>
+    <button class="btn2">버튼2</button>
+  </p>
+  <p>내용</p>
+</body>
+</html>
+//왜 ready:0 이고 load:300이지?

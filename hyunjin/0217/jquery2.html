@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery2</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        /* $(function(){     //#22의 부모를 선택해서 css스타일 적용
+            $("#22").parent()
+            .css("border", "4px solid red"); 
+         })
+ */       
+         $(function(){     
+            $("#22 > h1").css("border", "4px solid red");  //#22 안에 h1에 css 스타일 적용
+            
+            $("#22 > section").children()   //#22 안에 section의 자슥들에게 css 스타일 적용
+            .css({
+                "background-color":"blue",
+                "border" : "4px solid yellow"
+            }); 
+         })
+         /* 
+         $(function(){
+            $("#kb").css("border", "4px solid red"); 
+         })
+         $(function(){
+            $("h2#kb").css("border", "4px solid red"); 
+         })
+
+ */
+
+    </script>
+</head>
+<body>
+    <h1>인접 관계 선택자</h1>
+    <div id = "22">
+        <h1>h1h1</h1>
+        <section>
+            <h1>ddd</h1>
+            <p>ppp</p>
+        </section>    
+    <ul id = "kb">
+        <li>리스트1</li>
+            <ul>
+                <li id = "22">리스트22</li>
+                <li>리스트22-1</li>
+            </ul>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </ul>
+    <h2 id = "kb">선택자</h2>  <!-- 보통은 아이디를 다른 태그에 사용하지 않는게 맞음 -->
+    <a>국민</a>
+    <h3>직접 선택자</h3>
+</div>
+</body>
+</html>

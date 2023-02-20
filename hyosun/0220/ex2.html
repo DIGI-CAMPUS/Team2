@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On</title>
+  <script src="jquery.js"></script>
+  <script>
+      $(function(){ //단독 이벤트 등록//
+        $(".btn1").click(function(){
+          $(".btn1").parent().next()
+          .css({"color" : "#f00"});
+        });
+
+        $(".btn2").on({ //.on 메소드를 이용한 그룹 이벤트 등록//
+          "mouseover focus" : function(){
+            $(".btn2").parent().next()
+            .css({"color" : "#0f0"});
+          },
+          "mouseout blur" : function(){
+            $(".btn2").parent().next()
+            .css({"color" : "#000"});
+          }
+        });
+
+        // $(".btn1").clikc(); //강제 이벤트 
+        // $(".btn2").trigger("mouseover");
+
+        // $(".btn1").off("click"); //이벤트 제거
+        // $(".btn2").off("mouseover focus");
+      })
+  </script>
+</head>
+<body>
+  <p>
+    <button class="btn1">버튼1</button>
+  </p>
+  <p>내용</p>
+  <p>
+    <button class="btn2">버튼2</button>
+  </p>
+  <p>내용</p>
+</body>
+</html>
+
+
+<!--
+on() method는 한개 이상의 이벤트를 묶어 사용하기 위해 쓰인다
+그리고 여기에 한개 이상의 함수를 적용시키기 위해서도 쓰인다
+
+on() method 장점
+1. 이벤트 핸들러가 아직 DOM에 존재하지 않는 요소에 적용될 수 있게 함 
+  -> 이벤트를 부모요소와 엮고 자식요소에서 거슬러 올라올 때까지 listen하기 때문에
+2. 이벤트 핸들러를 추가하고 제거하기 쉽다
+
+
+what's Event Bubbling?
+
+예를들어, button < div < section < body tag 인경우
+button 을 클릭하면 그 이벤트는 버튼 요소, 디브, 섹션, 메인, 
+결국 바디 태그에
+영향을 미친다. 
+
+이것은 이벤트 버블링이라고 한다. 
+ 
+따라서, 부모 요소에 이벤트를 가하면,
+어떤 자녀요소가 이벤트를 일으키는지에 따라 실행이 되기에 
+우리는 그저 부모 요소에 이벤트를 가하면 된다. 
+-->
+
+<!--
+what's next () ?
+
+이 메소드는 바로 다음 형제 노드를 선택할 수 있도록 한다.
+
+why with parent() ?
+
+바로 앞에 부모 노드를 소환하는 메소드를 붙이는 이유는
+형제 노드끼리 클래스가 없이 동일한 p 노드가 여러개일 경우
+선택이 어렵기에 
+바로 두번째 형제 노드를 선택하기 위해 부모노드로 거슬러 올라가
+그 이후 두번째 형제 노드를 선택하게 하는 것이다. 
+
+
+-->

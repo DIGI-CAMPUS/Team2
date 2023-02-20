@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="jquery.js"></script>
+        <script>
+            $(function () {
+                $("#menu li").eq(2).css({ "background-color": "#ff0" }); //인덱스2
+
+                $("#menu li:lt(2)").css({ "background-color": "#0f0" }); //인덱스2보다 큰 인덱스
+                $("#menu li:gt(2)").css({ "background-color": "#f0f" }); //인덱스2보다 작은 인덱스
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="menu">
+            <h2>dd</h2>
+            <h2>dd</h2>
+            <h2>dd</h2>
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+            <li>내용5</li>
+        </ul>
+    </body>
+</html>

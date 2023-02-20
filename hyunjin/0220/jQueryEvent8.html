@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse over&out 두가지 방법</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn1")
+            .data({"text": "javascript"})
+            .on({
+                "mouseover" : over, //올리면 over 함수 호출
+                "mouseout" : out, // 벗어나면 out 함수 호출
+            });
+
+            $("#btn2")
+            .data({"text" : "welcome!"})
+            .on({
+                "mouseover focus" : over,  //올리면 over 함수 호출
+                "mouseout blur" : out      // 벗어나면 out 함수 호출
+            });
+
+            function over(){
+                $(".txt").text($(this).data("text"));   //P태그 클랙스 txt에 this 데이터 text를 넣어달라
+            }
+            function out(){
+                $(".txt").text("");                    // 비워달라
+            }
+        });           
+
+
+        /* 두 방식이 결과는 같아 보이지만 차이가 있음
+        화면에서 tab을 눌러보면 버튼 1은 작동을 안 하고, 버튼2는 작동을 함.
+        키보드 접근성을 고려한 이벤트로는 mouseover&out + focus&blur를 사용하는 것이 좋음 */
+    </script>
+</head>
+<body>
+ <p><button id = "btn1">버튼1</button></p>
+ <p><button id = "btn2">버튼2</button></p>
+ <p class = "txt"></p>
+</body>
+</html>

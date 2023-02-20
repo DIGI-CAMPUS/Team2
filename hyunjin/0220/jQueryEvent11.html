@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 실행 :: delegate, one 활용</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+          $(".btn_wrap").delegate(".btn_1.on",     //delegate 선택한 요소의 하위 요소에 이벤트 등록
+          "mouseover focus", function(){           //등록 이후에는 동적으로 생성된 요소와 복제된 요소에도 등록
+            alert("hello!");                       //one은 이벤트가 1회만 발생
+          });
+          $(".btn_1").addClass("on");              //btn_1에는 계속 alert가 생성되겟지
+
+          $(document).one("mouseover focus",       //.one 기존에 이벤트가 있는데, '한번'만 사용할 때
+          ".btn_2.on", function(){                  //btn_2에는 한번 실행이 되고 끝
+            alert("Welcome!");
+          });
+          $(".btn_2").addClass("on");
+    });
+ 
+    </script>
+</head>
+<body>
+ <div id="wrap">     
+    <p class = "btn_wrap">
+        <button class = "btn_1">버튼1</button>
+    </p>
+    <p class = "btn_wrap">
+        <button class = "btn_2">버튼2</button>
+    </p>
+ </div>    
+</body>
+</html>

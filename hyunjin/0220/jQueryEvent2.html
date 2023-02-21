@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>준비가 되기 전, 완료된 후 어떤 걸 보여줄 것인가</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                var h1 = $(".img1").height();
+                console.log("ready :",h1);    //ready 값  >> 준비되기 전 값이라 높이는 0으로 찍히고
+            });
+            $(window).load(function(){
+                var h2 =$ (".img1").height();
+                console.log("load :",h2);   // load 값  >> 로드 후 값이라 높이는 300이 찍힘
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <img src = "https://place-hold.it/300x300" class="img1">버튼1</img>
+    </p>
+    <p>내용</p>
+    <p>
+        <button class = "btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+    
+</body>
+</html>

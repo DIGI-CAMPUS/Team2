@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this의 사용, 역할</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+           $(".meunWrap_1 a").on("click", function(e){     //클릭시 기존값 초기화  
+           e.preventDefault();
+
+           $(".meunWrap_1 a")
+           .css({"background-color":"#fff"});             //선택되지 않은 것은 흰배경
+
+           $(this)
+           .css({"background-color":"#ff0"});            //선택된 것은 노랑 :: this는 눌렀을 때, 마우스 올렸을 때 등 지정할 때 쓴다
+        });
+
+        $(".meunWrap_2 a").on("click", function(e){
+            e.preventDefault();
+
+            $(".meunWrap_2 a")
+            .css({"background-color":"#fff"});          // 선택되지 않은 것은 흰배경
+
+            var idx = $(".meunWrap_2 a").index(this);   //내가 클릭한 것에 대한 인덱스 값은 반환받을건데, eq(이퀄. 인접선택자) idx로 반환 받겠따
+            $(".meunWrap_2 a").eq(idx)
+            .css({"background-color":"#0ff"});
+
+            $(".idxNum").text(idx); //눌렀을 때 반환된 값을 텍스트 값으로 표시해달라
+        });
+    });
+
+    </script>
+</head>
+<body>
+ <h2>$this</h2>
+ <ul class = "meunWrap_1">
+    <li><a href = "#">메뉴1</a></li>
+    <li><a href = "#">메뉴2</a></li>
+    <li><a href = "#">메뉴3</a></li>
+ </ul>
+ <h2>Index()</h2>
+ <ul class = "meunWrap_2">
+    <li><a href = "#">메뉴4</a></li>
+    <li><a href = "#">메뉴5</a></li>
+    <li><a href = "#">메뉴6</a></li>
+ </ul>
+ <p class = "idxNum"></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyCode를 활용한 스위치</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $(document).on("keydown", keyEventFnc);    //document = 보여달라, keydown = 키를 눌렀을 때, ketEventFnc라는 함수를 불러와달라
+            function keyEventFnc(e){                   //
+                var direct = "";                       //처음엔 비어있는 상태
+
+                switch(e.keyCode){                     //특정 키코드에 맞는 e펑션을 작동하자
+                    //값1 : 행위1
+                    case 37 : direct = "LEFT"          //
+                    break;
+                    case 38 : direct = "TOP"
+                    break;
+                    case 39 : direct = "RIGHT"
+                    break;
+                    case 40 : direct = "BOTTOM"
+                    break;
+                }
+                //만약 direct에 값이 들어가 있다면 user_id값을 value값으로 변경
+                if(direct) $("#user_id").val(direct);
+            }
+        });
+    </script>
+</head>
+<body>
+ <p><input type = "text" name = "user_id" id = "user_id"></input></p>
+
+</body>
+</html>

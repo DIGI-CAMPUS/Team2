@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event 그룹 이벤트 등록</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(function(){            //단독 이벤트 등록
+            $(".btn1").click(function(){
+                $(".btn1").parent().next()  //btn1을 클릭했을 때, next parent에 이벤트를 처리해라
+                .css({"color" : "#f00"});
+            });
+            $(".btn2").on({          //.on : 한개 이상의 여러 메소드를 등록할 때.. 그룹 이벤트 등록!
+                "mouseover focus" : function(){
+                    $(".btn2").parent().next()
+                    .css({"color" : "#0f0"});
+                },
+                "mouseout blur" : function(){
+                    $(".btn2").parent().next()
+                    .css({"color" : "#000"});
+                }
+            });
+
+            /* $(".btn1").click();
+            $(".btn2").trigger("mouseover"); */    //강제이벤트 : 행동없이 작동
+           /*  $(".btn1").off("click");
+            $(".btn2").off("mouseover focus");  */   //강제이벤트 : 이벤트 작동불가 설정
+        });
+                /* focus() 
+                : 마우스 포인터가 대상 엘리먼트에 위치할 때 이벤트를 처리하는 이벤트 핸들러
+
+                blur() 
+                : 대상 엘리먼트가 포커스를 잃었을 때 이벤트를 처리하는 이벤트 핸들러 */
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button class = "btn1">버튼1</button>
+    </p>
+    <p>내용</p>
+    <p>
+        <button class = "btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+    
+</body>
+</html>

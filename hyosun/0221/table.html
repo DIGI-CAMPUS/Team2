@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "bodystyle.css">
+    <link rel = "stylesheet" href = "headerbodystyle.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+</head>
+<body>
+
+        <div class = "card">
+            <div class = "card-header">
+                <h1>전자문서함</h1>
+            </div>
+            
+            <div class = "card-header-body">
+                <div class="card-widget">
+                    <fieldset class = "card-tag">
+                    <h3 id="h3"> 관심사 태그별 검색! </h3>
+                    <label for="radio-1">#펀드판매이벤트</label>
+                    <input type="radio" name="radio-1" id="radio-1">
+                    <label for="radio-2">#수신</label>
+                    <input type="radio" name="radio-1" id="radio-2">
+                    <label for="radio-3">#여신</label>
+                    <input type="radio" name="radio-1" id="radio-3">
+                    <label for="radio-4">#고객관리</label>
+                    <input type="radio" name="radio-1" id="radio-4">
+                    <label for="radio-5">#데이터</label>
+                    <input type="radio" name="radio-1" id="radio-5">
+                    <label for="radio-6">#전결</label>
+                    <input type="radio" name="radio-1" id="radio-6">
+                    </fieldset>
+                </div>
+            
+            <div class="card-search">
+                <div class="demo">
+                       <select name="salutation" id="salutation">
+                         <option disabled selected>기준</option>
+                         <option>제목</option>
+                         <option>작성부서</option>
+                         <option>본문내용</option>
+                         <option>필독문서</option>
+                       </select>
+                       <input class="sesarchBar" type="text" placeholder="" >
+                       <button>검색</button>
+                </div>
+
+                <div class="card-date">
+                    <div>
+                        <span>시작일자 : <input type="text" class="datepicker" placeholder="날짜 선택"></span>
+                    </div>
+                    <div>
+                        <span>종료일자 : <input type="text" class="datepicker" placeholder="날짜 선택"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+            <div class = "card-body">
+                <div class = "top">
+                    <div class = "num">번호</div>
+                    <div class = "title">제목</div>
+                    <div class = "name">작성부서</div>
+                    <div class = "date">작성일</div>
+                    <div class = "count">조회</div>
+                    <div class = "file">첨부파일</div>
+                </div>
+                <div>
+                    <div class = "num">1</div>
+                    <div class = "title outDated">주택금융공사 상품 메뉴얼 개정</div>
+                    <div class = "name">주택기금부</div>
+                    <div class = "date">21-02-20</div>
+                    <div class = "count">198</div>
+                    <a class = "file" href="#" title="&apos;주택금융공사 상품메뉴얼.doc&apos;"><img src="img/file.png" alt=""></a>
+                </div>
+                <div>
+                    <div class = "num">2</div>
+                    <div class = "title">(필독) kpi 일부 변경사항</div>
+                    <div class = "name">영업기획부</div>
+                    <div class = "date">23-01-01</div>
+                    <div class = "count">1207</div>
+                    <a class = "file" href="#" title="&apos;2023_kpi전문_개정.xl&apos;"><img src="img/excel.png" alt=""></a>
+                </div>
+                <div>
+                    <div class = "num">3</div>
+                    <div class = "title">Digi campus 연수 실시</div>
+                    <div class = "name">DT전략부</div>
+                    <div class = "date">23-02-01</div>
+                    <div class = "count">24</div>
+                    <a class = "file" href="#" title="&apos;Digi_campus_연수_커리큘럼.ppt&apos;"><img src="img/ppt.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div id="modal-confirm" title="안내 메세지">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>게시기간이 경과하여 열람이 불가합니다.</p>
+        </div> -->
+
+          
+
+    <!-- <script src="js/jquery.js"></script> -->
+    <script src="table.js"></script>
+</body>
+</html>

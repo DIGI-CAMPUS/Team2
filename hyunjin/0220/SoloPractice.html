@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업 만들기. Jquery 사용. 유튜브 보고 함</title>
+    <script src="jquery.js"></script>
+    <script>
+      /* 팝업 뜨고 없애기 */
+      $(document).ready(function () {
+        $(".btn").click(function () {
+          $(".popup_bg").css({ display: "block" });
+        });
+
+        $(".popup_bg").click(function () {
+          $(this).css({ display: "none" });
+        });
+      }); /* 초기상태가 display : flex거나 inline이면 최초값과 똑같도록 되돌려야지 */
+
+      /* 호버 시 색상 효과 적용 */
+      $(document).ready(function () {
+        $(".btn").hover(
+          function () {
+            $(this).css({
+              /* 여기서 this를 넣어줘야 버튼 5개 중 hover된 버튼만 개별적으로 색상 변경이 됨. ".btn"을 해버리면 5개 버튼 전체가 색상변결됨 */
+              background: "skyblue" /* 호버하면 스카이블루 */,
+              transition: "1s",
+            });
+          },
+          function () {
+            $(".btn").css({
+              background: "deeppink" /* 암것도 안하면 딥핑크(원래 색상) */,
+              transition: "0.5s",
+            });
+          }
+        );
+      }); /* transition같은 애니메이션 효과가 더 필요할 땐 css animation 검색! */
+
+      /* 버튼 클릭시 attr(속성) 변경하기  */
+      $(document).ready(function () {
+        $(".cooking > img").click(function () {
+            let src = $(this).attr("src");
+          if (
+            src == "https://cdn-icons-png.flaticon.com/128/2253/2253399.png"
+          ) {
+            $(".cooking > img").attr(
+              "src",
+              "https://cdn-icons-png.flaticon.com/128/4478/4478454.png"
+            ); /* 속성: src, value, class 등 */
+            $(this)
+              .css("opacity", "0")
+              .stop()
+              .attr(
+                "src",
+                "https://cdn-icons-png.flaticon.com/128/4478/4478454.png"
+              )
+              .animate({ opacity: 1 }, 500); /* 부드럽게 바뀌는 효과 추가 */
+          } else {
+            $(".cooking > img").attr(
+              "src",
+              "https://cdn-icons-png.flaticon.com/128/2253/2253399.png"
+            ); 
+            $(this)
+              .css("opacity", "0")
+              .stop()
+              .attr(
+                "src",
+                "https://cdn-icons-png.flaticon.com/128/2253/2253399.png"
+              )
+              .animate({ opacity: 1 }, 500);
+          }
+        });
+      });
+
+     /* 이벤트만해도 focus, change 등등 여러가지가 있으니, 제이쿼리 공식사이트에서 사전처럼 찾아 쓰기로! */
+    </script>
+    <style>
+      .btn {
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        background: deeppink;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+      }
+      .popup_bg {
+        display: none;
+        position: absolute; /* 전체에 해당 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(229, 86, 86, 0.7);
+      }
+      .popup {
+        position: absolute;
+        left: calc(
+          50% - 150px
+        ); /* 전체의 50% 우측으로 밀고 팝업크기의 반만큼 떙겨줘야 딱 중간으로 옴 */
+        top: calc(50% - 250px); /* 사칙연산 주변 띄어쓰기 필수! */
+        top: 50%;
+        width: 300px;
+        height: 500px;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">벗튼</div>
+    <div class="btn">벗튼</div>
+    <div class="btn">벗튼</div>
+    <div class="btn">벗튼</div>
+    <div class="btn">벗튼</div>
+    <div class="popup_bg">
+      <div class="popup"></div>
+    </div>
+    <div class="cooking">
+      <img src="https://cdn-icons-png.flaticon.com/128/2253/2253399.png" />
+    </div>
+  </body>
+</html>
